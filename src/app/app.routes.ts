@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: 'contacts', pathMatch: 'full' },
+  {
+    path: '',
+    loadChildren: () => import('./sms/sms.module').then((m) => m.SmsModule),
+  },
   {
     path: 'contacts',
     loadChildren: () =>

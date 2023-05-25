@@ -1,0 +1,11 @@
+<button routerLink="/contacts">Manage Contacts</button>
+
+<form (submit)="send()">
+  <input
+    type="text"
+    placeholder="Enter message"
+    name="message"
+    [(ngModel)]="message"
+  />
+  <button type="submit">Send</button>
+</form>

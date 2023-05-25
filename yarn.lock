@@ -1268,6 +1268,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@byteowls/capacitor-sms@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@byteowls/capacitor-sms/-/capacitor-sms-4.0.0.tgz#d20c70e1732c4f7c15b2475d26c48343034eada9"
+  integrity sha512-PqqJ4UTwXa/uWHKQm7qddH4Vb/VI4DzQNfI44JDwToD1+ZzY5e9EzGxfhPbTvFOZ+ifOs2al4aLuKHzQgWatPA==
+
 "@capacitor-community/contacts@^4.0.3":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@capacitor-community/contacts/-/contacts-4.0.3.tgz#222a700c2b96251ca92b45c33e7bca14bf51cb03"
