@@ -1,0 +1,10 @@
+<ng-container *ngIf="contacts$ | async as contacts">
+  <div *ngFor="let contact of contacts">
+    {{ contact.phoneNumber }}
+  </div>
+</ng-container>
+
+<form (submit)="addNumber()">
+  <input type="number" placeholder="Enter number" [(ngModel)]="phoneNumber" name="number"/>
+  <button type="submit">Add</button>
+</form>
