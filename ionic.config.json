@@ -1,0 +1,7 @@
+{
+  "name": "aphss",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
