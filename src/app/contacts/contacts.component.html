@@ -1,10 +1,20 @@
-<ng-container *ngIf="contacts$ | async as contacts">
-  <div *ngFor="let contact of contacts">
-    {{ contact.phoneNumber }}
-  </div>
-</ng-container>
+<div style="margin: 16px; overflow: auto;">
+  <ng-container *ngIf="contacts$ | async as contacts">
+    <div *ngFor="let contact of contacts">
+      {{ contact.phoneNumber }}
+      <button (click)="deleteNumber(contact.phoneNumber)">Delete</button>
+    </div>
+  </ng-container>
 
-<form (submit)="addNumber()">
-  <input type="number" placeholder="Enter number" [(ngModel)]="phoneNumber" name="number"/>
-  <button type="submit">Add</button>
-</form>
+  <form (submit)="addNumber()">
+    <input
+      type="number"
+      placeholder="Enter number"
+      [(ngModel)]="phoneNumber"
+      name="number"
+    />
+    <button type="submit">Add</button>
+  </form>
+
+  <button routerLink="picker">Add from contacts</button>
+</div>

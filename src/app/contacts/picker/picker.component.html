@@ -1,0 +1,14 @@
+<div style="margin: 16px; overflow: auto">
+  <div *ngFor="let contact of contacts">
+    {{ contact.name }}
+    <div *ngFor="let phone of contact.phoneNumbers">
+      <input
+        type="checkbox"
+        (change)="onChecked(phone, $any($event.target).checked)"
+      />
+      {{ phone }}
+    </div>
+  </div>
+
+  <button (click)="save()">Save</button>
+</div>

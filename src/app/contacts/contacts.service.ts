@@ -25,11 +25,32 @@ export class ContactService {
     });
   }
 
-  addContact(phoneNumber: string): void {
+  addContacts(...phoneNumbers: string[]): void {
     this.contacts$
       .pipe(
         take(1),
-        map((contacts) => [...contacts, { phoneNumber }])
+        map((contacts) => [
+          ...contacts,
+          ...phoneNumbers.map((phoneNumber) => ({ phoneNumber })),
+        ])
+      )
+      .subscribe((contacts) => {
+        this.contactsSubject.next(contacts);
+        this.saveContacts();
+      });
+  }
+
+  removeContact(phoneNumber: string): void {
+    this.contacts$
+      .pipe(
+        take(1),
+        map((contacts) => {
+          const index = contacts.findIndex(
+            (x) => x.phoneNumber === phoneNumber
+          );
+          contacts.splice(index, 1);
+          return contacts;
+        })
       )
       .subscribe((contacts) => {
         this.contactsSubject.next(contacts);
@@ -44,9 +65,17 @@ export class ContactService {
       res.contacts.map((contact) => ({
         name: contact.name?.display ?? '',
         phoneNumbers:
-          (contact.phones
-            ?.filter((x) => !!x)
-            .map((phone) => phone.number) as string[]) ?? [],
+          Array.from(
+            new Set(
+              contact.phones
+                ?.filter((x) => !!x)
+                .map((phone) => {
+                  if (!phone.number) return '';
+                  // Remove white spaces
+                  return phone.number.replace(/\s+/g, '');
+                })
+            )
+          ) ?? [],
       }))
     );
   }
