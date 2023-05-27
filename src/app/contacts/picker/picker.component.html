@@ -1,14 +1,24 @@
-<div style="margin: 16px; overflow: auto">
-  <div *ngFor="let contact of contacts">
-    {{ contact.name }}
-    <div *ngFor="let phone of contact.phoneNumbers">
-      <input
-        type="checkbox"
-        (change)="onChecked(phone, $any($event.target).checked)"
-      />
-      {{ phone }}
+<div class="flex justify-center h-screen w-auto py-4 overflow-auto">
+  <div class="w-full h-96 overflow-auto md:w-96 px-8">
+    <div *ngFor="let contact of contacts">
+     <p class="font-mono text-xl"> {{ contact.name }}</p>
+      <div class="flex items-center space-x-2" *ngFor="let phone of contact.phoneNumbers">
+        <input
+          class="cursor-pointer"
+          type="checkbox"
+          (change)="onChecked(phone, $any($event.target).checked)"
+        />
+       <div class="font-mono text-xl"> {{ phone }}</div>
+      </div>
     </div>
-  </div>
 
-  <button (click)="save()">Save</button>
+  <div class="flex justify-end">
+    <button
+    class="px-2.5 py-2 text-center font-thin text-base focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+    (click)="save()"
+  >
+    Save
+  </button>
+  </div>
+  </div>
 </div>

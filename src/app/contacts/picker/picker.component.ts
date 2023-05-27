@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: 'picker.component.html',
 })
 export class ContactPickerComponent {
-  contacts: DeviceContact[] = [];
+  contacts: DeviceContact[] = [
+
+  ];
   selectedPhoneNumbers: string[] = [];
 
   constructor(
