@@ -4,10 +4,10 @@
     <div>
       <ng-container class="h-max" *ngIf="contacts$ | async as contacts">
         <div
-          class="flex items-center justify-between justify-items-center space-x-3"
+          class="py-1 px-2 bg-slate-100 rounded-3xl  mb-0.5 font-mono text-xl border-t  pt-1 flex items-center justify-between justify-items-center space-x-3   "
           *ngFor="let contact of contacts"
         >
-          <div>
+          <div >
             {{ contact.phoneNumber }}
           </div>
           <div class="flex justify-end">
