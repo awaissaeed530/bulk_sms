@@ -1,8 +1,8 @@
 <div class="flex justify-center h-screen w-auto py-4 overflow-auto">
-  <div class="w-full h-96 overflow-auto md:w-96 px-8">
+  <div class="w-full h-max overflow-auto md:w-96 px-8">
     <!-- Delete -->
     <div>
-      <ng-container class="h-96" *ngIf="contacts$ | async as contacts">
+      <ng-container class="h-max" *ngIf="contacts$ | async as contacts">
         <div
           class="flex items-center justify-between justify-items-center space-x-3"
           *ngFor="let contact of contacts"

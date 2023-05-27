@@ -1,5 +1,5 @@
 <div class="flex justify-center h-screen w-auto py-4 overflow-auto">
-  <div class="w-full h-96 overflow-auto md:w-96 px-8">
+  <div class="w-full h-max overflow-auto md:w-96 px-8">
     <div *ngFor="let contact of contacts">
      <p class="font-mono text-xl"> {{ contact.name }}</p>
       <div class="flex items-center space-x-2" *ngFor="let phone of contact.phoneNumbers">
