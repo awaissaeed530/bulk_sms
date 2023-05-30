@@ -1,13 +1,53 @@
-<div class="flex text-black justify-center h-screen w-auto py-4 overflow-auto">
+<div class="flex justify-center pt-4">
+  <div class="w-full h-max overflow-auto md:w-96 px-8">
+    <!-- form add  -->
+    <div>
+      <form (submit)="addNumber()">
+        <div >
+          <input
+            required
+            #number="ngModel"
+            minlength="11"
+            type="number"
+            [(ngModel)]="phoneNumber"
+            name="number"
+            placeholder="Enter number"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
+          />
+        </div>
+        <div class="flex justify-between w-auto py-4">
+          <!-- Add from contacts -->
+          <div>
+            <button
+              class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 mr-2  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
+              routerLink="picker"
+            >
+              Add from contacts
+            </button>
+          </div>
+          <button
+            [disabled]="phoneNumber ? false : true"
+            type="submit"
+            class="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="flex text-black justify-center h-screen w-auto  pb-4 overflow-auto">
   <div class="w-full h-max overflow-auto md:w-96 px-8">
     <!-- Delete -->
     <div>
       <ng-container class="h-max" *ngIf="contacts$ | async as contacts">
         <div
-          class="py-1 px-2 bg-neutral-100 rounded-3xl p-2  mb-0.5 font-mono text-xl border-t  pt-1 flex items-center justify-between justify-items-center space-x-3   "
+          class="py-1 px-2 bg-neutral-100 rounded-3xl p-2 mb-0.5 font-mono text-xl border-t pt-1 flex items-center justify-between justify-items-center space-x-3"
           *ngFor="let contact of contacts"
         >
-          <div >
+          <div>
             {{ contact.phoneNumber }}
           </div>
           <div class="flex justify-end">
@@ -20,42 +60,6 @@
           </div>
         </div>
       </ng-container>
-    </div>
-
-    <!-- form add  -->
-    <div>
-      <form (submit)="addNumber()">
-        <div class="py-4">
-          <input
-            required
-            #number="ngModel"
-            minlength="11"
-            type="number"
-            [(ngModel)]="phoneNumber"
-            name="number"
-            placeholder="Enter number"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
-          />
-        </div>
-        <div class="flex justify-end w-auto">
-          <button
-            [disabled]="phoneNumber ? false : true"
-            type="submit"
-            class="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Add
-          </button>
-        </div>
-      </form>
-    </div>
-    <!-- Add from contacts -->
-    <div>
-      <button
-        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-2"
-        routerLink="picker"
-      >
-        Add from contacts
-      </button>
     </div>
   </div>
 </div>
