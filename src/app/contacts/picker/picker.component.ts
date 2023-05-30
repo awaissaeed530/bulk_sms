@@ -67,7 +67,7 @@ export class ContactPickerComponent {
     private readonly _router: Router,
     private readonly _contactService: ContactService
   ) {
-    this.loadContacts();
+    // this.loadContacts();
   }
 
   onChecked(number: string, checked: boolean): void {
