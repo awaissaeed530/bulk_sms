@@ -1,24 +1,34 @@
-<div class=" text-black flex justify-center h-screen w-auto py-4 overflow-auto">
+<div class="text-black flex justify-center h-screen w-auto py-4 overflow-auto">
   <div class="w-full h-max overflow-auto md:w-96 px-8">
-    <div  *ngFor="let contact of contacts">
-     <p class="py-1 px-2 bg-slate-100 rounded-3xl flex items-center mb-0.5 font-mono text-xl border-t  pt-1"> {{ contact.name }}</p>
-      <div class="py-1 px-2 bg-slate-100 rounded-3xl flex items-center space-x-2 border-b mb-0.5" *ngFor="let phone of contact.phoneNumbers">
+    <div
+      class="bg-neutral-50 rounded-3xl p-2"
+      *ngFor="let contact of contacts"
+    >
+      <p class="px-2 flex items-center font-mono text-xl pt-1">
+        {{ contact.name }}
+      </p>
+      <div
+        class="pb-1 px-2 flex items-center space-x-2 mb-0.5"
+        *ngFor="let phone of contact.phoneNumbers"
+      >
         <input
           class="cursor-pointer"
           type="checkbox"
           (change)="onChecked(phone, $any($event.target).checked)"
         />
-       <div class="font-mono text-xl"> {{ phone }}</div>
+        <div class="font-mono text-xl">{{ phone }}</div>
       </div>
     </div>
 
-  <div class="flex justify-end">
-    <button
-    class="px-2.5 py-2 mt-2 text-center font-thin text-base focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-    (click)="save()"
-  >
-    Save
-  </button>
-  </div>
+    <div class="flex justify-end">
+    
+      <button
+        type="button"
+        (click)="save()"
+        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-2"
+      >
+      Save
+      </button>
+    </div>
   </div>
 </div>

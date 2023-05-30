@@ -4,7 +4,7 @@
     <div>
       <ng-container class="h-max" *ngIf="contacts$ | async as contacts">
         <div
-          class="py-1 px-2 bg-slate-100 rounded-3xl  mb-0.5 font-mono text-xl border-t  pt-1 flex items-center justify-between justify-items-center space-x-3   "
+          class="py-1 px-2 bg-neutral-100 rounded-3xl p-2  mb-0.5 font-mono text-xl border-t  pt-1 flex items-center justify-between justify-items-center space-x-3   "
           *ngFor="let contact of contacts"
         >
           <div >
@@ -41,7 +41,7 @@
           <button
             [disabled]="phoneNumber ? false : true"
             type="submit"
-            class="px-2.5 py-2 mb-1 text-center font-thin cursor-pointer text-base text-white bg-blue-700 hover:bg-blue-800 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none"
+            class="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             Add
           </button>
@@ -51,7 +51,7 @@
     <!-- Add from contacts -->
     <div>
       <button
-        class="px-2.5 py-2 text-center font-thin text-base focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 rounded-lg mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-2"
         routerLink="picker"
       >
         Add from contacts
