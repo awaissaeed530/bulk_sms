@@ -13,7 +13,10 @@
 </div>
 <div class="text-black flex justify-center h-screen w-auto pb-4 overflow-auto">
   <div class="w-full h-max overflow-auto md:w-96 px-8">
-    <div class="bg-neutral-50 rounded-3xl p-2 mb-1 mt-1 " *ngFor="let contact of contacts">
+    <div
+      class="bg-neutral-50 rounded-3xl p-2 mb-1 mt-1"
+      *ngFor="let contact of contacts"
+    >
       <p class="px-2 flex items-center font-mono text-xl pt-1">
         {{ contact.name }}
       </p>

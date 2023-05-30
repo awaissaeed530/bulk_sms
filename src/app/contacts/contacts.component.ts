@@ -15,8 +15,9 @@ export class ContactsComponent {
   }
 
   addNumber(): void {
+    if (this.phoneNumber.length === 0) return;
     this._contactService.addContacts(this.phoneNumber);
-    this.phoneNumber = '';
+    this.phoneNumber = ''
   }
 
   deleteNumber(number: string): void {

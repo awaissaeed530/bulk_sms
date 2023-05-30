@@ -3,7 +3,7 @@
     <!-- form add  -->
     <div>
       <form (submit)="addNumber()">
-        <div >
+        <div>
           <input
             required
             #number="ngModel"
@@ -19,16 +19,17 @@
           <!-- Add from contacts -->
           <div>
             <button
-              class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 mr-2  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
+              type="button"
+              class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               routerLink="picker"
             >
               Add from contacts
             </button>
           </div>
           <button
-            [disabled]="phoneNumber ? false : true"
+            [disabled]="!phoneNumber"
             type="submit"
-            class="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            class="text-white cursor-pointer bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             Add
           </button>
@@ -38,7 +39,7 @@
   </div>
 </div>
 
-<div class="flex text-black justify-center h-screen w-auto  pb-4 overflow-auto">
+<div class="flex text-black justify-center h-screen w-auto pb-4 overflow-auto">
   <div class="w-full h-max overflow-auto md:w-96 px-8">
     <!-- Delete -->
     <div>
